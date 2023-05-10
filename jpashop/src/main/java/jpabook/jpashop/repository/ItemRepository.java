@@ -21,12 +21,12 @@ public class ItemRepository {
         }
     }
 
-    public Item findOne(Item item){
-        return  em.find(Item.class, item);
+    public Item findOne(Long itemId){
+        return  em.find(Item.class, itemId);
     }
 
     public List<Item> findAll(){
         return em.createQuery("select i from Item i",Item.class).getResultList();
     }
-    
+
 }
