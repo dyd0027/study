@@ -22,7 +22,7 @@ public class ItemRepository {
     }
 
     public Item findOne(Long itemId){
-        return  em.find(Item.class, itemId);
+        return em.find(Item.class, itemId);
     }
 
     public List<Item> findAll(){
