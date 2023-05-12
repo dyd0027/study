@@ -12,3 +12,12 @@ implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.6'
   - class에 직접 선언
 - @Embedded
   - 변수에 직접 선언
+### 1대다
+- Member.java - Order.java에서 확인 가능
+- Member.java: @OneToMany(mappedBy = "member") private List<Order> orders = new ~;
+  - Order 객체에 선언된 member라는 변수에 매핑 되어 있다는 뜻!!!!
+- Order.java: @ManyToOne @JoinColumn("member_id") private Member member;
+  - Member의 id랑 조인되어 있음
+### enum
+- enum에서 enum type은 꼭 String으로 해야함 숫자로 타입지정을하면 변수가 중각에 끼어 들면 그 친구가 그 숫자를 대신함
+  - @Enumerated(EnumType.STRING)
